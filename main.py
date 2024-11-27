@@ -36,12 +36,7 @@ def crop_model(video=r"C:\Users\zgarm\Desktop\Smart_crop\ripe4.mp4"):
             else:
                 prediction = "Detecting"  
 
-            if prediction == "Ripe":
-                # requests.get("http://172.20.10.14/ripe")
-            elif prediction == "Unripe":
-                # requests.get("http://172.20.10.14/unripe")
-            else:
-                pass
+           
                 # requests.get("http://172.20.10.14/uncertain")
                 
 
@@ -62,6 +57,5 @@ def crop_model(video=r"C:\Users\zgarm\Desktop\Smart_crop\ripe4.mp4"):
     finally:
         # requests.get("http://192.168.1.12/nofeed")
         pass
-
 
 
