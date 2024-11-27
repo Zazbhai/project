@@ -18,7 +18,7 @@ def crop_model(video=r"C:\Users\zgarm\Desktop\Smart_crop\ripe4.mp4"):
 
             if not ret:
                 print("Video ended. Triggering action...")
-                requests.get("http://192.168.1.12/nofeed")
+                # requests.get("http://192.168.1.12/nofeed")
                 break
             image_path = cv2.resize(feed, (224, 224))
 
@@ -37,11 +37,12 @@ def crop_model(video=r"C:\Users\zgarm\Desktop\Smart_crop\ripe4.mp4"):
                 prediction = "Detecting"  
 
             if prediction == "Ripe":
-                requests.get("http://172.20.10.14/ripe")
+                # requests.get("http://172.20.10.14/ripe")
             elif prediction == "Unripe":
-                requests.get("http://172.20.10.14/unripe")
+                # requests.get("http://172.20.10.14/unripe")
             else:
-                requests.get("http://172.20.10.14/uncertain")
+                pass
+                # requests.get("http://172.20.10.14/uncertain")
                 
 
             cv2.putText(feed, f"Prediction: {prediction}", (10, 30), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 255, 0), 3)
@@ -50,7 +51,7 @@ def crop_model(video=r"C:\Users\zgarm\Desktop\Smart_crop\ripe4.mp4"):
 
             key = cv2.waitKey(1)
             if key == 27:
-                requests.get("http://172.20.10.14/nofeed")
+                # requests.get("http://172.20.10.14/nofeed")
                 break
 
         vid.release()
@@ -59,7 +60,8 @@ def crop_model(video=r"C:\Users\zgarm\Desktop\Smart_crop\ripe4.mp4"):
     except Exception as e:
         pass
     finally:
-        requests.get("http://192.168.1.12/nofeed")
+        # requests.get("http://192.168.1.12/nofeed")
+        pass
 
 
 
